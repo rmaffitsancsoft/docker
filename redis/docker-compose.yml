@@ -1,0 +1,11 @@
+version: "3.2"
+services:
+  db:
+    mem_limit: 1G
+    ports:
+      - 6379:6379
+    image: redis:7.0
+    restart: always
+    volumes:
+    - ./data:/data
+    - ./backup:/backup
