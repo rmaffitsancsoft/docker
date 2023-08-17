@@ -1,0 +1,14 @@
+version: "3.2"
+services:
+  db:
+    mem_limit: 1G
+    ports:
+      - 1883:1883
+      - 1884:1884
+    image: eclipse-mosquitto:2.0
+    restart: always
+    volumes:
+    - ./backup:/backup
+    - ./config:/mosquitto/config
+    - ./data:/mosquitto/data
+    - ./log:/mosquitto/log
