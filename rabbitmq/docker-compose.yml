@@ -1,0 +1,12 @@
+version: "3.2"
+services:
+  db:
+    mem_limit: 2G
+    ports:
+    - 5672:5672
+    - 15672:15672
+    image: rabbitmq:3.12-management
+    restart: always
+    volumes:
+    - ./data:/var/lib/rabbitmq
+    - ./backup:/backup
