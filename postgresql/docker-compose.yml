@@ -1,13 +1,13 @@
 version: "3.2"
 services:
   db:
-    mem_limit: 1G
+    mem_limit: 4G
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - 5432:5432
-    image: postgres:15.3
+    image: timescale/timescaledb:2.12.2-pg15
     restart: always
     volumes:
     - ./data:/var/lib/postgresql/data
